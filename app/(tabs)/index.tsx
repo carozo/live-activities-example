@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Platform } from "react-native";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
-const { ScoreWidgetModule } = NativeModules;
+import { requireNativeModule } from "expo-modules-core";
 
 import React from "react";
 import { Button, NativeModules, View } from "react-native";
@@ -12,6 +12,8 @@ export default function HomeScreen() {
     driverName: string;
     expectedDeliveryTime: string;
   };
+
+  const ScoreWidgetModule = requireNativeModule("LiveActivityControl");
 
   return (
     <ParallaxScrollView
@@ -33,7 +35,7 @@ export default function HomeScreen() {
         <Button
           title="Start"
           onPress={() => {
-            ScoreWidgetModule.startLiveActivity();
+            ScoreWidgetModule.startActivity(1, 1, "Test", "Test", "Test");
           }}
         />
         <Button
