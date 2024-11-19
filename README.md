@@ -22,7 +22,6 @@ Minimal code reproduction for the live activity code that conflicts with the cus
         appleTeamId: "<<your team id>>",
       },
     ],
-  ],
    ```
 
 2. Run prebuild
